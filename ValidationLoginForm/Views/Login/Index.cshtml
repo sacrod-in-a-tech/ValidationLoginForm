@@ -1,6 +1,38 @@
-﻿namespace ValidationLoginForm.Views.Login
-{
-    public class Index
-    {
-    }
-}
+<h2>Login Form</h2>
+
+<form id="loginForm" method="post">
+    <div>
+        <label>Username:</label>
+        <input type="text" id="username" name="username" />
+    </div>
+
+    <div>
+        <label>Password:</label>
+        <input type="password" id="password" name="password" />
+    </div>
+
+    <div>
+        <input type="submit" value="Login" />
+    </div>
+
+    <div style="color:red;" id="errorMessage">
+        @ViewBag.Message
+    </div>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("#loginForm").submit(function (e) {
+            var username = $("#username").val().trim();
+            var password = $("#password").val().trim();
+
+            if (username === "" || password === "") {
+                $("#errorMessage").text("Please fill in all fields.");
+                e.preventDefault();
+            }
+        });
+    });
+</script>
+
