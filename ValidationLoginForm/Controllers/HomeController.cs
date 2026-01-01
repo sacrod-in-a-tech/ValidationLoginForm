@@ -1,6 +1,6 @@
-using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
 using ValidationLoginForm.Models;
+using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 
 namespace ValidationLoginForm.Controllers
 {
@@ -23,3 +23,4 @@ namespace ValidationLoginForm.Controllers
         }
     }
 }
+
